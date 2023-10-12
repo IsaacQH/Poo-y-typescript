@@ -3,7 +3,7 @@
 //IMPORTS Y EXPORTS
 //Podemos exportar e importar archivos con los comandos de import - export
 
-import { Camiseta } from "./camiseta";                     //Importamos la clase
+//import { Camiseta } from "./camiseta";                     //Importamos la clase
 
  
 class  Main{                                               //Creación de clase

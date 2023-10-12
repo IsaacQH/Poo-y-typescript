@@ -1,7 +1,6 @@
-"use strict";
 //IMPORTS Y EXPORTS
 //Podemos exportar e importar archivos con los comandos de import - export
-Object.defineProperty(exports, "__esModule", { value: true });
+//import { Camiseta } from "./camiseta";                     //Importamos la clase
 var Main = /** @class */ (function () {
     function Main() {
         console.log("Aplicación JS cargada!!"); //Pone en consola el mensaje

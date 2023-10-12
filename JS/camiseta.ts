@@ -3,8 +3,17 @@
 
 //Una Clase, es un molde con el cual podemos crear infinidad de objetos con características parecidas. En una clase tendremos propiedades que definirán al objeto o algunas podrán estar predefinidas. También, en una clase tenemos lo que llamamos métodos, que se refiere a las funciones o acciones que el objeto realizará.
 
-export class Camiseta{                                        //Definimos la clase Camistea 
-//exportamos la clase
+
+//Interfaz: Contrato de propiedades y métodos obligatorios 
+interface CamisetaBase{
+    setTalla(talla:string);
+    getPrecio();
+}
+
+
+
+class Camiseta implements CamisetaBase{                                        //Definimos la clase Camistea 
+ // export class Camiseta{                             //Definimos la clase Camistea //exportamos la clase
 
     //Propiedades (caracterírticas del objeto)
     public color: string;                              //Definimos caraterítuca pública como string
@@ -15,7 +24,7 @@ export class Camiseta{                                        //Definimos la cla
 
 
     //Constructor
-    constructor(color, modelo, marca, talla, precio){
+    constructor(color='none', modelo='none', marca='none', talla='none', precio='none'){
         this.color = color
         this.modelo =  modelo
         this.marca = marca
@@ -35,10 +44,27 @@ export class Camiseta{                                        //Definimos la cla
 }
 
 
-/*     SIN IMPORTAR Y EXPORTAR
+//Clase hija
+class Sudadera extends Camiseta{                      //Se crea clase Sudadrera que hereda a Camiseta
+    public capucha:boolean;                           //propiedad publica capucha
+
+    setCapucha(capucha:boolean){                      //método de nombrar capucha con valor introducido
+        this.capucha = capucha;
+    }                   
+    getCapucha():boolean{                             //Método que regresa booleano el valor de capucha
+        return this.capucha
+    }
+}
+
+
+
 var camisa = new Camiseta('Azul', 'Playera', 'Tommy', 'M', '40 dls')   //Esto define al objeto, no se mainpulan valores
 console.log(camisa)
-*/
+var hoodie = new Sudadera('Rojo', 'Polo', 'Zara', 'S', '30 dls');
+hoodie.setCapucha(true);
+hoodie.setTalla('G')
+console.log(hoodie)
+
 
 
 
@@ -50,3 +76,6 @@ playera.marca = "Zara"
 playera.setTalla("M")                                 //Se hace un setTalla para cambiar la propiedad priv
 console.log(playera, playera.getPrecio())             //Imprime en consola objeto playera y el precio
 */
+
+
+
