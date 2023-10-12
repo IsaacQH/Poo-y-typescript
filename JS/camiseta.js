@@ -1,4 +1,7 @@
+"use strict";
 //CLASES EN TS CON POO
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Camiseta = void 0;
 //Una Clase, es un molde con el cual podemos crear infinidad de objetos con características parecidas. En una clase tendremos propiedades que definirán al objeto o algunas podrán estar predefinidas. También, en una clase tenemos lo que llamamos métodos, que se refiere a las funciones o acciones que el objeto realizará.
 var Camiseta = /** @class */ (function () {
     //Constructor
@@ -18,9 +21,12 @@ var Camiseta = /** @class */ (function () {
     };
     return Camiseta;
 }());
-var camisa = new Camiseta('Azul', 'Playera', 'Tommy', 'M', '40 dls');
-console.log(camisa);
-//Sin constructor...
+exports.Camiseta = Camiseta;
+/*     SIN IMPORTAR Y EXPORTAR
+var camisa = new Camiseta('Azul', 'Playera', 'Tommy', 'M', '40 dls')   //Esto define al objeto, no se mainpulan valores
+console.log(camisa)
+*/
+//Sin constructor... tenemos que hacer lo siguiente, tomando en cuenta que se manipulan valores
 /*var playera = new Camiseta()                        //Se crea un objeto con el molde Camiseta en variable Playera
 playera.color = "verde"                               //Se definen algunas propiedades públicas
 playera.modelo = "Polo"

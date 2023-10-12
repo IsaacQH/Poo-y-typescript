@@ -3,7 +3,8 @@
 
 //Una Clase, es un molde con el cual podemos crear infinidad de objetos con características parecidas. En una clase tendremos propiedades que definirán al objeto o algunas podrán estar predefinidas. También, en una clase tenemos lo que llamamos métodos, que se refiere a las funciones o acciones que el objeto realizará.
 
-class Camiseta{                                        //Definimos la clase Camistea
+export class Camiseta{                                        //Definimos la clase Camistea 
+//exportamos la clase
 
     //Propiedades (caracterírticas del objeto)
     public color: string;                              //Definimos caraterítuca pública como string
@@ -33,11 +34,15 @@ class Camiseta{                                        //Definimos la clase Cami
     }
 }
 
-var camisa = new Camiseta('Azul', 'Playera', 'Tommy', 'M', '40 dls')
 
+/*     SIN IMPORTAR Y EXPORTAR
+var camisa = new Camiseta('Azul', 'Playera', 'Tommy', 'M', '40 dls')   //Esto define al objeto, no se mainpulan valores
 console.log(camisa)
+*/
 
-//Sin constructor...
+
+
+//Sin constructor... tenemos que hacer lo siguiente, tomando en cuenta que se manipulan valores
 /*var playera = new Camiseta()                        //Se crea un objeto con el molde Camiseta en variable Playera 
 playera.color = "verde"                               //Se definen algunas propiedades públicas
 playera.modelo = "Polo"
