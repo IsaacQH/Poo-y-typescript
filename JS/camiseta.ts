@@ -11,8 +11,18 @@ interface CamisetaBase{
 }
 
 
+//Decoradores: Nos permiten hacer una copia, modificarla y accionarla mediante la definición de parámetros
+function Estampar(logo: string){
+    return function(target: Function, key){
+        target.prototype.estampacion = function():void{
+            console.log("Camiseta estampada con el logo de: " + logo);
+        }
+    }
+}
 
-class Camiseta implements CamisetaBase{                                        //Definimos la clase Camistea 
+
+//@Estampar('Gucci')                                   //Decorador
+class Camiseta implements CamisetaBase{                //Definimos la clase Camistea con una interfaz
  // export class Camiseta{                             //Definimos la clase Camistea //exportamos la clase
 
     //Propiedades (caracterírticas del objeto)
@@ -60,6 +70,7 @@ class Sudadera extends Camiseta{                      //Se crea clase Sudadrera 
 
 var camisa = new Camiseta('Azul', 'Playera', 'Tommy', 'M', '40 dls')   //Esto define al objeto, no se mainpulan valores
 console.log(camisa)
+
 var hoodie = new Sudadera('Rojo', 'Polo', 'Zara', 'S', '30 dls');
 hoodie.setCapucha(true);
 hoodie.setTalla('G')

@@ -14,6 +14,15 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+//Decoradores: Nos permiten hacer una copia, modificarla y accionarla mediante la definición de parámetros
+function Estampar(logo) {
+    return function (target, key) {
+        target.prototype.estampacion = function () {
+            console.log("Camiseta estampada con el logo de: " + logo);
+        };
+    };
+}
+//@Estampar('Gucci')                                   //Decorador
 var Camiseta = /** @class */ (function () {
     //Constructor
     function Camiseta(color, modelo, marca, talla, precio) {
